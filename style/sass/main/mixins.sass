@@ -1,0 +1,104 @@
+// All elements on page 
+
+@mixin transition()
+	-webkit-transition: all 0.8s ease
+	-moz-transition: all 0.8s ease
+	-o-transition: all 0.8s ease
+	-ms-transition: all 0.8s ease
+	transition: all 0.8s ease
+@mixin img()
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+@mixin title($color)
+	text-align: center
+	color: $color
+	padding-bottom: 30px
+@mixin big-card($color)
+	height: 320px
+	float: left
+	overflow: hidden
+	color: $color
+	border-radius: 5px
+	text-align: center
+	
+@mixin small-card($color)
+	height: 150px
+	width: 30%
+	margin-bottom: 20px
+	border-radius: 5px	
+	text-align: center
+	color: $color
+
+@mixin btn-large($color1,$color2)
+	padding: 15px 28px
+	color: $color1
+	background: $color2
+	outline: none
+	user-select: none
+	border: none
+	border-radius: 5px
+
+
+
+
+
+
+
+
+@mixin repeat-background($list,$folder)
+	@each $number,$meamber in $list
+		&:nth-child(#{$number})
+			div.img-container
+				div.img-fluid
+					background-image: url('../../assets/#{$folder}/#{$meamber}')
+
+@mixin team-image($list,$folder)
+	text-align: center
+	margin-bottom: 30px
+	.img-container
+		height: 250px
+		.img-fluid
+			+img
+			border-radius: 50%
+			width: 200px
+			height: 200px
+			margin: auto
+	h5
+		font-weight: 600
+		margin-bottom: 0
+		font-size: 120%
+		color: $lazy-main
+	span
+		color: $lazy-main
+		font-size: 120%
+
+	+repeat-background($list,$folder)
+	a
+		display: none 
+		i
+			font-size: 25px 
+			border: 1px solid $lazy-main
+			border-radius: 50%
+			color: $lazy-main
+			width: 45px
+			height: 45px
+			padding: 10px
+			&:hover
+				color: $lazy-white
+				background-color: $lazy-main
+				+transition
+	&:hover
+		.img-container
+			.img-fluid
+				width: 240px
+				height: 240px
+				opacity: 0.5
+				+transition
+		a
+			display: block
+			position: absolute
+			top: 100px
+			left: 0
+			width: 100%
+			text-align: center
