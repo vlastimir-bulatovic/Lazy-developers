@@ -30,21 +30,72 @@
 	text-align: center
 	color: $color
 
-@mixin btn-large($color1,$color2)
-	padding: 15px 28px
+@mixin btn-join($color1,$color2)
+	padding: 14px 38px
 	color: $color1
-	background: $color2
+	background-image: $color2
 	outline: none
 	user-select: none
 	border: none
 	border-radius: 5px
+	border: 2px solid $color2
+	&:hover
+		color: $color2
+		background-color: $color1
+		+transition
+@mixin input($color)
+	width: 45%
+	margin-bottom: 10px
+	padding: 10px 20px
+	color: $color
+	border: none
+	outline: none
+	user-select: none
+	margin-right: 4.4%
+	border-radius: 5px
+	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+@mixin lazy-card-one($color)
+	background-color: $color
+	z-index: 1
+	height: 200px
+	padding: 90px 0
+	border-radius: 5px
+	box-shadow: 0 10px 100px 0px rgba(46, 61, 73, 0.2)
+	text-align: center
+@mixin lazy-card($color)
+	position: absolute
+	top: 30px
+	right: 20px
+	width: 300px
+	+lazy-card-one($color)
 
+@mixin lazy-layer-pink()
+	position: absolute
+	top: 10px
+	right: 0
+	background-image: linear-gradient(to right, #a951ed, #ff5483)
+	width: 300px
+	color: #fff
+	z-index: -1
+	height: 200px
+	border-radius: 5px
 
+@mixin typing-letters($color)
+	color: $color
+	white-space: nowrap
+	overflow: hidden
+	width: 30em
+	animation: type 5s steps(60, end)
+	.blink
+		animation: blink 1s infinite
 
+	@keyframes type
+		from 
+			width: 0  
 
-
-
-
+	@keyframes blink
+		to
+			opacity: .0
 
 @mixin repeat-background($list,$folder)
 	@each $number,$meamber in $list
@@ -60,7 +111,7 @@
 		height: 250px
 		.img-fluid
 			+img
-			border-radius: 50%
+			border-radius: 5px
 			width: 200px
 			height: 200px
 			margin: auto
@@ -68,9 +119,9 @@
 		font-weight: 600
 		margin-bottom: 0
 		font-size: 120%
-		color: $lazy-main
+		color: $lazy-black
 	span
-		color: $lazy-main
+		color: $lazy-black
 		font-size: 120%
 
 	+repeat-background($list,$folder)
@@ -78,21 +129,21 @@
 		display: none 
 		i
 			font-size: 25px 
-			border: 1px solid $lazy-main
-			border-radius: 50%
-			color: $lazy-main
-			width: 45px
-			height: 45px
+			border: 1px solid $lazy-black
+			border-radius: 5px
+			color: $lazy-black
+			width: 35px
+			height: 35px
 			padding: 10px
 			&:hover
 				color: $lazy-white
-				background-color: $lazy-main
+				background-color: $lazy-black
 				+transition
 	&:hover
 		.img-container
 			.img-fluid
-				width: 240px
-				height: 240px
+				width: 210px
+				height: 210px
 				opacity: 0.5
 				+transition
 		a
@@ -102,3 +153,6 @@
 			left: 0
 			width: 100%
 			text-align: center
+			i
+				width: 45px
+				height: 45px
