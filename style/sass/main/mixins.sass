@@ -21,7 +21,8 @@
 	color: $color
 	border-radius: 5px
 	text-align: center
-	
+	@media screen and(max-width: 576px)
+		margin-bottom: 20px
 @mixin small-card($color)
 	height: 150px
 	width: 30%
@@ -29,7 +30,10 @@
 	border-radius: 5px	
 	text-align: center
 	color: $color
-
+	@media screen and(max-width: 766px)
+		width: 45%
+	@media screen and(max-width: 576px)
+		width: 100%
 @mixin btn-join($color1,$color2)
 	padding: 14px 38px
 	color: $color1
@@ -54,6 +58,8 @@
 	margin-right: 4.4%
 	border-radius: 5px
 	box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+	@media screen and(max-width: 768px)
+		width: 95%
 @mixin lazy-card-one($color)
 	background-color: $color
 	z-index: 1
@@ -84,8 +90,8 @@
 	color: $color
 	white-space: nowrap
 	overflow: hidden
-	width: 30em
-	animation: type 5s steps(60, end)
+	width: 100%
+	animation: type 6s steps(60, end)
 	.blink
 		animation: blink 1s infinite
 
@@ -156,3 +162,30 @@
 			i
 				width: 45px
 				height: 45px
+.icon
+	text-decoration: none
+	color: $lazy-pink
+	-webkit-animation: pulse 1s ease-in
+	-moz-animation: pulse 1s ease-in
+	animation: pulse 1s ease-in
+	-webkit-animation-iteration-count: infinite
+	-moz-animation-iteration-count: infinite
+	animation-iteration-count: infinite
+	&:hover
+		animation: none
+@keyframes pulse 
+	0% 
+		-webkit-transform: scale(1)
+		opacity: 0.0 
+	25% 
+		-webkit-transform: scale(1.25)
+		opacity: 0.1 
+	50% 
+		-webkit-transform: scale(1.5)
+		opacity: 0.3
+	75%
+		-webkit-transform: scale(1.75)
+		opacity: 0.5
+	100% 
+		-webkit-transform: scale(2)
+		opacity: 0.0

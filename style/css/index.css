@@ -12,6 +12,34 @@ body {
     padding-top: 40px;
     padding-bottom: 40px; }
 
+.icon {
+  text-decoration: none;
+  color: #ff5483;
+  -webkit-animation: pulse 1s ease-in;
+  -moz-animation: pulse 1s ease-in;
+  animation: pulse 1s ease-in;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
+  .icon:hover {
+    animation: none; }
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0; }
+  25% {
+    -webkit-transform: scale(1.25);
+    opacity: 0.1; }
+  50% {
+    -webkit-transform: scale(1.5);
+    opacity: 0.3; }
+  75% {
+    -webkit-transform: scale(1.75);
+    opacity: 0.5; }
+  100% {
+    -webkit-transform: scale(2);
+    opacity: 0; } }
 header {
   background: #242424; }
   header div nav {
@@ -31,14 +59,14 @@ header {
 #intro {
   background-image: radial-gradient(circle at bottom left, #07DD85 0%, #05B29E 50%, #025284 100%); }
   #intro div .message {
-    padding: 120px; }
-    #intro div .message h2 {
+    padding: 120px 0; }
+    #intro div .message h3 {
       color: #fff;
       white-space: nowrap;
       overflow: hidden;
-      width: 30em;
-      animation: type 5s steps(60, end); }
-      #intro div .message h2 .blink {
+      width: 100%;
+      animation: type 6s steps(60, end); }
+      #intro div .message h3 .blink {
         animation: blink 1s infinite; }
 @keyframes type {
   from {
@@ -69,28 +97,39 @@ header {
     text-align: center;
     color: #fff;
     padding-bottom: 30px; }
-  #projects div ul li {
-    display: inline-block;
-    background: #fff;
-    margin-left: 20px; }
-  #projects div ul li.project-one {
-    height: 320px;
-    float: left;
-    overflow: hidden;
-    color: #242424;
-    border-radius: 5px;
-    text-align: center; }
-    #projects div ul li.project-one h3 {
-      margin-top: 110px; }
-  #projects div ul li.project-two {
-    height: 150px;
-    width: 30%;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: center;
-    color: #242424; }
-    #projects div ul li.project-two h3 {
-      margin-top: 40px; }
+  #projects div ul {
+    padding: 0; }
+    #projects div ul li {
+      display: inline-block;
+      background: #fff;
+      margin: 0 1%; }
+    #projects div ul li.project-one {
+      height: 320px;
+      float: left;
+      overflow: hidden;
+      color: #242424;
+      border-radius: 5px;
+      text-align: center; }
+      @media screen and (max-width: 576px) {
+        #projects div ul li.project-one {
+          margin-bottom: 20px; } }
+      #projects div ul li.project-one h3 {
+        margin-top: 110px; }
+    #projects div ul li.project-two {
+      height: 150px;
+      width: 30%;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      text-align: center;
+      color: #242424; }
+      @media screen and (max-width: 766px) {
+        #projects div ul li.project-two {
+          width: 45%; } }
+      @media screen and (max-width: 576px) {
+        #projects div ul li.project-two {
+          width: 100%; } }
+      #projects div ul li.project-two h3 {
+        margin-top: 40px; }
 
 #license-and-vendors div h2 {
   text-align: center;
@@ -126,6 +165,7 @@ header {
     height: 200px;
     border-radius: 5px; }
 #license-and-vendors div .simple-card {
+  margin-bottom: 20px;
   background-color: #fff;
   z-index: 1;
   height: 200px;
@@ -257,6 +297,9 @@ header {
       margin-right: 4.4%;
       border-radius: 5px;
       box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      @media screen and (max-width: 768px) {
+        #newsletter div form input {
+          width: 95%; } }
     #newsletter div form input[type="email"] {
       width: 95%;
       margin-right: 0; }
@@ -270,5 +313,8 @@ header {
         -o-transition: all 0.8s ease;
         -ms-transition: all 0.8s ease;
         transition: all 0.8s ease; }
+      @media screen and (max-width: 768px) {
+        #newsletter div form input[type="submit"] {
+          width: 45%; } }
 
 /*# sourceMappingURL=index.css.map */
