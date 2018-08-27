@@ -5,9 +5,13 @@
 			color: $lazy-white
 			background: $lazy-black
 			padding: 30px 100px 30px 30px
-			-webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%)
-			clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%)
-
+			+clip-path
+			@media screen and(max-width:  768px)
+				text-align: center
+				padding: 30px
 		div.second
 			color: $lazy-black
 			padding: 30px 100px 30px 30px
+			@media screen and(max-width: 768px)
+				text-align: center
+				padding: 30px

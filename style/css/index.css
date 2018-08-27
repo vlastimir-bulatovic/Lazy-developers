@@ -21,51 +21,23 @@ body {
   -webkit-animation-iteration-count: infinite;
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
-  .icon:hover {
-    animation: none; }
 
 @keyframes pulse {
   0% {
-    -webkit-transform: scale(1);
-    opacity: 0; }
-  25% {
-    -webkit-transform: scale(1.25);
-    opacity: 0.1; }
-  50% {
-    -webkit-transform: scale(1.5);
-    opacity: 0.3; }
-  75% {
-    -webkit-transform: scale(1.75);
-    opacity: 0.5; }
+    -webkit-transform: scale(1); }
   100% {
-    -webkit-transform: scale(2);
-    opacity: 0; } }
-header {
-  background: #242424; }
-  header div nav {
-    text-align: right; }
-    header div nav ul li {
-      display: inline-block;
-      text-align: center;
-      margin-left: 15px; }
-      header div nav ul li a {
-        color: #fff; }
-        header div nav ul li a:hover {
-          color: #fff; }
-  header div div.logo {
-    text-align: center;
-    color: #fff; }
-
+    -webkit-transform: scale(1.15); } }
 #intro {
-  background-image: radial-gradient(circle at bottom left, #07DD85 0%, #05B29E 50%, #025284 100%); }
+  background-image: linear-gradient(to right, #a951ed, #ff5483); }
   #intro div .message {
-    padding: 120px 0; }
+    padding: 120px 0;
+    -ms-flex-item-align: center; }
     #intro div .message h3 {
       color: #fff;
       white-space: nowrap;
       overflow: hidden;
       width: 100%;
-      animation: type 6s steps(60, end); }
+      animation: type 3s steps(100, end); }
       #intro div .message h3 .blink {
         animation: blink 1s infinite; }
 @keyframes type {
@@ -87,9 +59,21 @@ header {
     padding: 30px 100px 30px 30px;
     -webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
     clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%); }
+    @media screen and (max-width: 768px) {
+      #about div div.first {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          -webkit-clip-path-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+    @media screen and (max-width: 768px) {
+      #about div div.first {
+        text-align: center;
+        padding: 30px; } }
   #about div div.second {
     color: #242424;
     padding: 30px 100px 30px 30px; }
+    @media screen and (max-width: 768px) {
+      #about div div.second {
+        text-align: center;
+        padding: 30px; } }
 
 #projects {
   background: #242424; }
@@ -98,7 +82,8 @@ header {
     color: #fff;
     padding-bottom: 30px; }
   #projects div ul {
-    padding: 0; }
+    padding: 0;
+    margin: auto; }
     #projects div ul li {
       display: inline-block;
       background: #fff;
@@ -182,14 +167,9 @@ header {
   text-align: center;
   margin-bottom: 30px; }
   #team div .meamber .img-container {
-    height: 250px; }
+    padding: 30px; }
     #team div .meamber .img-container .img-fluid {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
       border-radius: 5px;
-      width: 200px;
-      height: 200px;
       margin: auto; }
   #team div .meamber h5 {
     font-weight: 600;
@@ -199,18 +179,6 @@ header {
   #team div .meamber span {
     color: #242424;
     font-size: 120%; }
-  #team div .meamber:nth-child(2) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
-  #team div .meamber:nth-child(3) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
-  #team div .meamber:nth-child(4) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
-  #team div .meamber:nth-child(5) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
-  #team div .meamber:nth-child(6) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
-  #team div .meamber:nth-child(7) div.img-container div.img-fluid {
-    background-image: url("../../assets/team/betmen.jpg"); }
   #team div .meamber a {
     display: none; }
     #team div .meamber a i {
@@ -229,15 +197,20 @@ header {
         -o-transition: all 0.8s ease;
         -ms-transition: all 0.8s ease;
         transition: all 0.8s ease; }
-  #team div .meamber:hover .img-container .img-fluid {
-    width: 210px;
-    height: 210px;
-    opacity: 0.5;
+  #team div .meamber:hover .img-container {
+    padding: 20px;
     -webkit-transition: all 0.8s ease;
     -moz-transition: all 0.8s ease;
     -o-transition: all 0.8s ease;
     -ms-transition: all 0.8s ease;
     transition: all 0.8s ease; }
+    #team div .meamber:hover .img-container .img-fluid {
+      opacity: 0.5;
+      -webkit-transition: all 0.8s ease;
+      -moz-transition: all 0.8s ease;
+      -o-transition: all 0.8s ease;
+      -ms-transition: all 0.8s ease;
+      transition: all 0.8s ease; }
   #team div .meamber:hover a {
     display: block;
     position: absolute;
@@ -250,7 +223,7 @@ header {
       height: 45px; }
 
 #join-us {
-  background-image: radial-gradient(circle at bottom left, #07DD85 0%, #05B29E 50%, #025284 100%); }
+  background-image: linear-gradient(to right, #a951ed, #ff5483); }
   #join-us div h2 {
     text-align: center;
     color: #fff;
@@ -260,61 +233,21 @@ header {
     #join-us div p button {
       margin-top: 30px;
       padding: 14px 38px;
-      color: #05B29E;
-      background-image: #fff;
+      color: #ff5483;
+      background: #fff;
       outline: none;
       user-select: none;
       border: none;
       border-radius: 5px;
-      border: 2px solid #fff; }
+      border: 2px solid transparent; }
       #join-us div p button:hover {
         color: #fff;
-        background-color: #05B29E;
+        background: transparent;
+        border-color: #fff;
         -webkit-transition: all 0.8s ease;
         -moz-transition: all 0.8s ease;
         -o-transition: all 0.8s ease;
         -ms-transition: all 0.8s ease;
         transition: all 0.8s ease; }
-
-#newsletter {
-  background-image: radial-gradient(circle at bottom left, #07DD85 0%, #05B29E 50%, #025284 100%); }
-  #newsletter div h2 {
-    text-align: center;
-    color: #fff;
-    padding-bottom: 30px; }
-  #newsletter div form {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px 50px; }
-    #newsletter div form input {
-      width: 45%;
-      margin-bottom: 10px;
-      padding: 10px 20px;
-      color: #616d77;
-      border: none;
-      outline: none;
-      user-select: none;
-      margin-right: 4.4%;
-      border-radius: 5px;
-      box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-      @media screen and (max-width: 768px) {
-        #newsletter div form input {
-          width: 95%; } }
-    #newsletter div form input[type="email"] {
-      width: 95%;
-      margin-right: 0; }
-    #newsletter div form input[type="submit"] {
-      margin-left: 25%;
-      margin-right: 0; }
-      #newsletter div form input[type="submit"]:hover {
-        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
-        -webkit-transition: all 0.8s ease;
-        -moz-transition: all 0.8s ease;
-        -o-transition: all 0.8s ease;
-        -ms-transition: all 0.8s ease;
-        transition: all 0.8s ease; }
-      @media screen and (max-width: 768px) {
-        #newsletter div form input[type="submit"] {
-          width: 45%; } }
 
 /*# sourceMappingURL=index.css.map */

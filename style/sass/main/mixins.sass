@@ -6,14 +6,24 @@
 	-o-transition: all 0.8s ease
 	-ms-transition: all 0.8s ease
 	transition: all 0.8s ease
+
 @mixin img()
 	background-position: center
 	background-repeat: no-repeat
 	background-size: cover
+
 @mixin title($color)
 	text-align: center
 	color: $color
 	padding-bottom: 30px
+
+@mixin clip-path()
+	-webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%)
+	clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%)
+	@media screen and(max-width: 768px)
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
+	
 @mixin big-card($color)
 	height: 320px
 	float: left
@@ -23,6 +33,7 @@
 	text-align: center
 	@media screen and(max-width: 576px)
 		margin-bottom: 20px
+
 @mixin small-card($color)
 	height: 150px
 	width: 30%
@@ -34,19 +45,22 @@
 		width: 45%
 	@media screen and(max-width: 576px)
 		width: 100%
+		
 @mixin btn-join($color1,$color2)
 	padding: 14px 38px
 	color: $color1
-	background-image: $color2
+	background: $color2 
 	outline: none
 	user-select: none
 	border: none
 	border-radius: 5px
-	border: 2px solid $color2
+	border: 2px solid transparent
 	&:hover
 		color: $color2
-		background-color: $color1
+		background: transparent
+		border-color: $color2
 		+transition
+
 @mixin input($color)
 	width: 45%
 	margin-bottom: 10px
@@ -91,7 +105,7 @@
 	white-space: nowrap
 	overflow: hidden
 	width: 100%
-	animation: type 6s steps(60, end)
+	animation: type 3s steps(100, end)
 	.blink
 		animation: blink 1s infinite
 
@@ -110,16 +124,13 @@
 				div.img-fluid
 					background-image: url('../../assets/#{$folder}/#{$meamber}')
 
-@mixin team-image($list,$folder)
+@mixin team-image()
 	text-align: center
 	margin-bottom: 30px
 	.img-container
-		height: 250px
+		padding: 30px
 		.img-fluid
-			+img
 			border-radius: 5px
-			width: 200px
-			height: 200px
 			margin: auto
 	h5
 		font-weight: 600
@@ -129,8 +140,6 @@
 	span
 		color: $lazy-black
 		font-size: 120%
-
-	+repeat-background($list,$folder)
 	a
 		display: none 
 		i
@@ -147,9 +156,9 @@
 				+transition
 	&:hover
 		.img-container
+			padding: 20px
+			+transition
 			.img-fluid
-				width: 210px
-				height: 210px
 				opacity: 0.5
 				+transition
 		a
@@ -162,6 +171,8 @@
 			i
 				width: 45px
 				height: 45px
+
+
 .icon
 	text-decoration: none
 	color: $lazy-pink
@@ -171,21 +182,9 @@
 	-webkit-animation-iteration-count: infinite
 	-moz-animation-iteration-count: infinite
 	animation-iteration-count: infinite
-	&:hover
-		animation: none
+	
 @keyframes pulse 
 	0% 
 		-webkit-transform: scale(1)
-		opacity: 0.0 
-	25% 
-		-webkit-transform: scale(1.25)
-		opacity: 0.1 
-	50% 
-		-webkit-transform: scale(1.5)
-		opacity: 0.3
-	75%
-		-webkit-transform: scale(1.75)
-		opacity: 0.5
 	100% 
-		-webkit-transform: scale(2)
-		opacity: 0.0
+		-webkit-transform: scale(1.15)
